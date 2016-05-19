@@ -1,6 +1,6 @@
 
 function CustomSet(numbers){
-  this.numbers = numbers;
+  this.numbers = numbers || [];
 }
 
 CustomSet.prototype.eql = function(anotherSubject){
@@ -23,6 +23,27 @@ CustomSet.prototype.delete = function(numberToDelete){
     this.numbers.splice(index, 1)
   }
   return this
+}
+
+CustomSet.prototype.difference = function(comparison){
+  for (var i = 0; i < comparison.numbers.length; i++){
+    if (this.numbers.indexOf(comparison.numbers[i]) > -1){
+      this.delete(comparison.numbers[i])
+    }
+  }
+  return this
+}
+
+CustomSet.prototype.disjoint = function(comparison){
+  var result = true
+  var thisSortedArray = this.numbers.sort();
+  var anotherSubjectSortedArray = comparison.numbers.sort();
+  for (var i = 0; i < thisSortedArray.length; i++){
+    if (this.numbers.indexOf(comparison.numbers[i]) > -1){
+      result = false
+    }
+  }
+  return result
 }
 
 module.exports = CustomSet;

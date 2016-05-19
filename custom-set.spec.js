@@ -23,7 +23,7 @@ describe('CustomSet', function() {
     expect(actual2.eql(expected2)).toBe(true);
   });
 
-  xit('can check for difference', function(){
+  it('can check for difference', function(){
     var expected = new CustomSet([1, 3]);
     var actual = new CustomSet([3, 2, 1]).difference(new CustomSet([2, 4]));
     expect(actual.eql(expected)).toBe(true);
@@ -32,7 +32,7 @@ describe('CustomSet', function() {
     expect(actual2.eql(expected2)).toBe(true);
   });
 
-  xit('can test disjoint', function() {
+  it('can test disjoint', function() {
     var actual = new CustomSet([1, 2]).disjoint(new CustomSet([3, 4]));
     expect(actual).toBe(true);
     var actual2 = new CustomSet([1, 2]).disjoint(new CustomSet([2, 3]));
