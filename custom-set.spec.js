@@ -41,7 +41,7 @@ describe('CustomSet', function() {
     expect(actual3).toBe(true);
   });
 
-  xit('can be emptied', function() {
+  it('can be emptied', function() {
     var actual = new CustomSet([1, 2]).empty();
     var expected = new CustomSet();
     expect(actual.eql(expected)).toBe(true);

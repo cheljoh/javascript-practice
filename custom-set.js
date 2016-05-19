@@ -46,4 +46,9 @@ CustomSet.prototype.disjoint = function(comparison){
   return result
 }
 
+CustomSet.prototype.empty = function(){
+  this.numbers = []
+  return this
+}
+
 module.exports = CustomSet;
